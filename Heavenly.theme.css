@@ -23,7 +23,7 @@
 /* ── Variables ───────────────────────────────────────────────────── */
 :root {
     /* Background */
-    --wallpaper: url("https://i.imgur.com/ueB9DyW.gif");
+    --wallpaper: url("file:///C:/Users/Vipye/AppData/Roaming/Vencord/themes/animesher.com_gif-monochrome-anime-scenery-1614907.gif");
     --background-image: var(--wallpaper);
     --bg-opacity: 1;
 
