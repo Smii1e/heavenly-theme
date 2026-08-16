@@ -142,39 +142,40 @@ a {
     color: var(--link-color) !important;
 }
 
-/* ── Title bar — halo icon + "Heavenly" with glow ───────────────── */
-.leading_c38106::before {
-    content: "" !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-}
-
-/* Halo SVG injected as background on a pseudo within the leading element */
+/* ── Title bar — animated 3D halo + "Heavenly" ──────────────────── */
 .leading_c38106 {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
 }
 
+/* Halo icon via ::before */
 .leading_c38106::before {
     content: "" !important;
     display: inline-block !important;
-    width: 22px !important;
-    height: 14px !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23ff33cc'/%3E%3Cstop offset='50%25' stop-color='%23E500FF'/%3E%3Cstop offset='100%25' stop-color='%23ff33cc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='50' cy='30' rx='44' ry='14' fill='none' stroke='%23E500FF' stroke-width='12' opacity='0.25'/%3E%3Cellipse cx='50' cy='30' rx='44' ry='14' fill='none' stroke='url(%23g)' stroke-width='5.5'/%3E%3Cellipse cx='50' cy='30' rx='44' ry='14' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+    width: 28px !important;
+    height: 18px !important;
+    margin-right: 7px !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    /* 3D animated halo as SVG data URI */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 90' overflow='visible'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23ff00ee' stop-opacity='0.1'/%3E%3Cstop offset='25%25' stop-color='%23E500FF'/%3E%3Cstop offset='50%25' stop-color='%23ffffff' stop-opacity='0.95'/%3E%3Cstop offset='75%25' stop-color='%23E500FF'/%3E%3Cstop offset='100%25' stop-color='%23ff00ee' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3Cfilter id='bl'%3E%3CfeGaussianBlur stdDeviation='5'/%3E%3C/filter%3E%3Cfilter id='gf'%3E%3CfeGaussianBlur stdDeviation='3' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cellipse cx='100' cy='45' rx='88' ry='24' fill='none' stroke='%23E500FF' stroke-width='18' opacity='0.15' filter='url(%23bl)'/%3E%3Cellipse cx='100' cy='47' rx='86' ry='21' fill='none' stroke='%23220033' stroke-width='9' opacity='0.8'/%3E%3Cellipse cx='100' cy='45' rx='88' ry='24' fill='none' stroke='url(%23g1)' stroke-width='6'/%3E%3Cellipse cx='100' cy='45' rx='82' ry='18' fill='none' stroke='rgba(200,0,255,0.5)' stroke-width='2'/%3E%3Cpath d='M30 36 Q100 19 170 36' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2.5' stroke-linecap='round' filter='url(%23gf)'/%3E%3C/svg%3E") !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    filter: drop-shadow(0 0 4px rgba(229,0,255,0.8)) !important;
-    vertical-align: middle !important;
-    margin-right: 0 !important;
-    background-color: transparent !important;
-    padding: 0 !important;
+    filter: drop-shadow(0 0 5px rgba(229,0,255,0.9)) drop-shadow(0 0 12px rgba(229,0,255,0.5)) !important;
+    animation: halo-pulse 3s ease-in-out infinite !important;
 }
 
+@keyframes halo-pulse {
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(229,0,255,0.9)) drop-shadow(0 0 12px rgba(229,0,255,0.5)); opacity: 1; }
+    50%       { filter: drop-shadow(0 0 8px rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(229,0,255,0.8)); opacity: 0.85; }
+}
+
+/* "Heavenly" text via ::after */
 .leading_c38106::after {
     content: "H e a v e n l y" !important;
     font-size: 12px !important;
@@ -184,18 +185,16 @@ a {
     letter-spacing: 2px !important;
     text-shadow:
         0 0 8px var(--accentcolorV2),
-        0 0 20px var(--accentcolorV2),
-        0 0 40px var(--accentcolorV2) !important;
-    margin-left: 6px !important;
+        0 0 20px var(--accentcolorV2) !important;
+    transition: letter-spacing 0.4s ease, text-shadow 0.4s ease !important;
 }
 
 .leading_c38106:hover::after {
+    letter-spacing: 3.5px !important;
     text-shadow:
-        0 0 10px #fff,
-        0 0 20px var(--accentcolorV2),
-        0 0 50px var(--accentcolorV2) !important;
-    letter-spacing: 3px !important;
-    transition: letter-spacing 0.3s ease !important;
+        0 0 6px #fff,
+        0 0 16px var(--accentcolorV2),
+        0 0 40px var(--accentcolorV2) !important;
 }
 #app-mount .info__2debe .line__2debe:last-child:after {
     content: "Heavenly" !important;
