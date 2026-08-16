@@ -22,7 +22,7 @@
 /* ── Variables ───────────────────────────────────────────────────── */
 :root {
     /* Background */
-    --wallpaper: url("https://i.imgur.com/ueB9DyW.gif");
+    --wallpaper: url("https://i.imgur.com/UFODayp.gif");
     --background-image: var(--wallpaper);
     --bg-opacity: 1;
 
@@ -33,7 +33,7 @@
 
     /* Accent */
     --accentcolor: 229, 0, 255;
-    --accentcolorV2: #E500FF;
+    --accentcolorV2: #e500ff;
 
     /* Window */
     --window-blur: 5px;
@@ -76,7 +76,7 @@
     --chillax-spotify-control-squid-glow: rgba(255, 255, 255, 0.4);
 
     /* Links */
-    --link-color: #E500FF;
+    --link-color: #e500ff;
     --scrollbar-color: rgba(0, 0, 0, 0.05);
     --tint-colour: rgb(255, 51, 159);
 
