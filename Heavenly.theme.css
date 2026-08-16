@@ -3,17 +3,7 @@
  * @author Smii1e
  * @version 1.1.0
  * @description Tokyo colors and background with a clean, calm UI.
- * @website https://smii1e.github.io/heavenly-theme/
  * @source https://github.com/Smii1e/heavenly-theme
- *
- * @var image --wallpaper Background Image {https://i.imgur.com/ueB9DyW.gif}
- * @var range --bg-opacity Background Opacity [0, 1, , 0.01]
- * @var color --accentcolorV2 Accent Color
- * @var color --link-color Link Color
- * @var range --window-blur Window Blur [0, 20, px, 1]
- * @var range --window-border-radius Window Corners [0, 30, px, 1]
- * @var range --window-margin Window Margin [0, 60, px, 1]
- * @var select --font-name Font [Poppins, Poppins; Inter, Inter; gg sans, gg sans; Roboto, Roboto; Comic Sans MS, Comic Sans MS]
  */
 
 /* UI framework */
@@ -152,24 +142,60 @@ a {
     color: var(--link-color) !important;
 }
 
-/* ── Title bar — "Heavenly" with glow ────────────────────────────── */
+/* ── Title bar — halo icon + "Heavenly" with glow ───────────────── */
 .leading_c38106::before {
-    content: "‏‏‎ H e a v e n l y" !important;
+    content: "" !important;
+    display: inline-flex !important;
+    align-items: center !important;
     background: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+}
+
+/* Halo SVG injected as background on a pseudo within the leading element */
+.leading_c38106 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.leading_c38106::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 22px !important;
+    height: 14px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23ff33cc'/%3E%3Cstop offset='50%25' stop-color='%23E500FF'/%3E%3Cstop offset='100%25' stop-color='%23ff33cc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='50' cy='30' rx='44' ry='14' fill='none' stroke='%23E500FF' stroke-width='12' opacity='0.25'/%3E%3Cellipse cx='50' cy='30' rx='44' ry='14' fill='none' stroke='url(%23g)' stroke-width='5.5'/%3E%3Cellipse cx='50' cy='30' rx='44' ry='14' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    filter: drop-shadow(0 0 4px rgba(229,0,255,0.8)) !important;
+    vertical-align: middle !important;
+    margin-right: 0 !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+.leading_c38106::after {
+    content: "H e a v e n l y" !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    font-family: "Poiret one" !important;
     color: #fff !important;
+    letter-spacing: 2px !important;
     text-shadow:
         0 0 8px var(--accentcolorV2),
         0 0 20px var(--accentcolorV2),
         0 0 40px var(--accentcolorV2) !important;
+    margin-left: 6px !important;
 }
-.leading_c38106:hover::before {
-    content: "‏‏‎ H e a v e n l y" !important;
+
+.leading_c38106:hover::after {
     text-shadow:
         0 0 10px #fff,
         0 0 20px var(--accentcolorV2),
         0 0 50px var(--accentcolorV2) !important;
+    letter-spacing: 3px !important;
+    transition: letter-spacing 0.3s ease !important;
 }
 #app-mount .info__2debe .line__2debe:last-child:after {
     content: "Heavenly" !important;
