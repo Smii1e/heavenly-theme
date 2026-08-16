@@ -1,0 +1,241 @@
+/**
+ * @name Heavenly
+ * @author Heavenly
+ * @version 1.0.0
+ * @description Tokyo colors and background with a clean, calm UI.
+ *
+ * @var image --wallpaper Background Image URL (paste any image/gif URL)
+ * @vardefault --wallpaper url("https://i.imgur.com/ueB9DyW.gif")
+ *
+ * @var range --bg-opacity Background Opacity [0, 100, %, 1]
+ * @vardefault --bg-opacity 100%
+ *
+ * @var color --accentcolorV2 Accent Color
+ * @vardefault --accentcolorV2 #E500FF
+ *
+ * @var range --window-blur Window Blur [0, 20, px, 1]
+ * @vardefault --window-blur 5px
+ *
+ * @var range --window-border-radius Window Corner Radius [0, 30, px, 1]
+ * @vardefault --window-border-radius 10px
+ *
+ * @var range --window-margin Window Margin [0, 60, px, 1]
+ * @vardefault --window-margin 20px
+ *
+ * @var select --font-name Font [Poppins, Poppins::Poppins; Inter, Inter::Inter; gg sans, gg sans::gg sans; Roboto, Roboto::Roboto; Comic Sans MS, Comic Sans::Comic Sans MS]
+ * @vardefault --font-name Poppins
+ */
+
+/* UI framework */
+@import url("https://warrayquipsome.github.io/Chillax/chillax.css");
+
+/* Addons */
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Microsoft.css");
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/_res/SettingsIcons.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/IconPackEdited.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/AvatarOnlyMemberList.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/FolderRedesign.css");
+@import url("https://raw.githubusercontent.com/DiscordStyles/RadialStatus/refs/heads/deploy/RadialStatus.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/FriendGrid.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/ColoredLinks.css");
+
+/* Root variables */
+:root {
+    /* Background — Tokyo animated wallpaper */
+    --background-image: var(--wallpaper);
+    --bg-opacity: 100%;
+    --wallpaper: url("https://i.imgur.com/ueB9DyW.gif");
+
+    /* Typography */
+    --font-name: Poppins;
+    --font-size: 13px;
+    --group-chat-font: "Monoton";
+
+    /* Accent colors — Tokyo magenta/purple */
+    --accentcolor: 229, 0, 255;
+    --accentcolorV2: #E500FF;
+
+    /* Radial status */
+    --rs-small-spacing: 0px;
+    --rs-medium-spacing: 0px;
+    --rs-large-spacing: 0px;
+    --rs-small-width: 2.5px;
+    --rs-medium-width: 3.5px;
+    --rs-large-width: 4.5px;
+    --rs-avatar-shape: 50%;
+    --rs-online-color: #43b581;
+    --rs-idle-color: #faa61a;
+    --rs-dnd-color: #982929;
+    --rs-offline-color: #808080;
+    --rs-streaming-color: #ff339f;
+    --rs-invisible-color: #808080;
+    --rs-phone-visible: block;
+    --rs-phone-color: var(--rs-online-color);
+
+    /* Settings modal */
+    --themelightsettingsmodalbackground: rgb(223, 223, 223);
+    --themedarksettingsmodalbackground: rgb(51, 49, 53);
+    --settingsmodalwidth: 960px;
+    --settingsmodalheight: 80vh;
+
+    /* Member list */
+    --memberlist-border-radius: 10px;
+
+    /* Scroller */
+    --chillax-scroller-color: transparent;
+
+    /* Spotify player */
+    --chillax-spotify-control-squid-gif-url: url("https://raw.githubusercontent.com/Chillax-ORG/Images/refs/heads/main/Glow_Squid_BE1.gif");
+    --chillax-spotify-control-squid-width: 25px;
+    --chillax-spotify-control-squid-height: 25px;
+    --chillax-spotify-control-squid-glow: rgba(255, 255, 255, 0.4);
+
+    /* Link & tint colors */
+    --link-color: #E500FF;
+    --scrollbar-color: rgba(0, 0, 0, 0.05);
+    --tint-colour: rgb(255, 51, 159);
+}
+
+/* Window — dark mode */
+:root.theme-dark {
+    --window-margin: 20px;
+    --window-colour: #0009;
+    --window-blur: 5px;
+    --window-border-radius: 10px;
+    --sidebar-colour: rgb(36, 36, 36);
+}
+
+/* Window — light mode */
+:root.theme-light {
+    --window-margin: 20px;
+    --window-colour: rgba(255, 255, 255, 0.6);
+    --window-blur: 5px;
+    --window-border-radius: 10px;
+    --sidebar-colour: rgb(209, 209, 209);
+}
+
+/* Transparency — dark */
+.theme-dark {
+    --background-message-hover: rgba(255, 255, 255, 0.055);
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-normal: #dcddde;
+    --text-muted: #9d9d9d;
+    --channels-default: #8e9297;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #dcddde;
+    --interactive-active: #fff;
+    --interactive-muted: #4f545c;
+    --background-primary: transparent;
+    --background-secondary: transparent;
+    --background-tertiary: transparent;
+    --background-accent: rgb(36, 36, 36);
+    --activity-card-background: transparent;
+    --deprecated-panel-background: transparent;
+}
+
+/* Transparency — light */
+.theme-light {
+    --background-message-hover: rgba(255, 255, 255, 0.055);
+    --header-primary: rgb(0, 0, 0);
+    --header-secondary: #3f3f3f;
+    --text-normal: #303030;
+    --text-muted: #333333;
+    --channels-default: #585b5e;
+    --interactive-normal: #3a3a3a;
+    --interactive-hover: #333333;
+    --interactive-active: rgb(0, 0, 0);
+    --interactive-muted: #4f545c;
+    --background-primary: transparent;
+    --background-secondary: transparent;
+    --background-tertiary: transparent;
+    --background-accent: rgb(27, 27, 27);
+    --activity-card-background: transparent;
+    --deprecated-panel-background: transparent;
+}
+
+/* Links */
+a {
+    color: var(--link-color) !important;
+}
+
+/* ================================================================
+   HEAVENLY — CUSTOMIZATION
+   Change anything in this block. Don't touch below the divider.
+   ================================================================
+
+   Background image — paste any image or GIF URL between the quotes
+   --wallpaper: url("https://i.imgur.com/ueB9DyW.gif");
+
+   Accent color — the main purple/magenta color used everywhere
+   --accentcolorV2: #E500FF;
+
+   Window blur strength (higher = more frosted glass)
+   --window-blur: 5px;
+
+   Window corner roundness
+   --window-border-radius: 10px;
+
+   Window gap from screen edge
+   --window-margin: 20px;
+
+   Font (options: Poppins, Inter, Roboto, "gg sans", "Comic Sans MS")
+   --font-name: Poppins;
+
+   ================================================================ */
+
+/* 1. Replace "chillax" title bar wordmark with "Heavenly" */
+.leading_c38106::before {
+    content: "‏‏‎ H e a v e n l y" !important;
+}
+.leading_c38106:hover::before {
+    content: "‏‏‎ H e a v e n l y" !important;
+}
+#app-mount .info__2debe .line__2debe:last-child:after {
+    content: "Heavenly" !important;
+}
+
+/* 2. Friend card banners — fully transparent, wallpaper shows through */
+:root {
+    --FG-cards-banner-background: transparent;
+    --user-accent-color: transparent;
+}
+.peopleColumn__133bf .userInfo__0a06e::before {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+/* also make the card body itself see-through */
+.peopleColumn__133bf .peopleListItem_cc6179 {
+    background: rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+}
+.peopleColumn__133bf .peopleListItem_cc6179:hover {
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 3. Bottom-left account panel — show only pfp, reveal on hover */
+.accountPopoutButtonWrapper__37e49 {
+    min-width: 32px !important;
+    max-width: 32px !important;
+    overflow: hidden !important;
+    transition: min-width 0.3s ease, max-width 0.3s ease !important;
+}
+.accountPopoutButtonWrapper__37e49:hover {
+    min-width: 270px !important;
+    max-width: 270px !important;
+}
+/* hide name/tag text until hover */
+.accountPopoutButtonWrapper__37e49 .nameTag__37e49 {
+    opacity: 0;
+    transition: opacity 0.3s ease !important;
+}
+.accountPopoutButtonWrapper__37e49:hover .nameTag__37e49 {
+    opacity: 1;
+}
+
+/* 4. Spotify squid — white tint */
+#vc-spotify-progress-bar [class*="grabber"]::after,
+.container_6sXIoE .timeline_UWmgAx .grabber_7sd5f5 {
+    filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.4)) !important;
+}
