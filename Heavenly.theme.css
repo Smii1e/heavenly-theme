@@ -43,7 +43,7 @@
 
     /* Title bar text */
     --title-bar-text: "H e a v e n l y";
-    --title-bar-visible: block;
+    --title-bar-visible: none;
 
     /* Radial status */
     --rs-small-spacing: 0px;
