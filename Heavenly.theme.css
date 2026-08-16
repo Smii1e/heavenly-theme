@@ -41,6 +41,10 @@
     --window-border-radius: 10px;
     --window-margin: 20px;
 
+    /* Title bar text */
+    --title-bar-text: "H e a v e n l y";
+    --title-bar-visible: block;
+
     /* Radial status */
     --rs-small-spacing: 0px;
     --rs-medium-spacing: 0px;
@@ -72,9 +76,9 @@
 
     /* Spotify squid */
     --chillax-spotify-control-squid-gif-url: url("https://raw.githubusercontent.com/Chillax-ORG/Images/refs/heads/main/Glow_Squid_BE1.gif");
-    --chillax-spotify-control-squid-width: 25px;
-    --chillax-spotify-control-squid-height: 25px;
-    --chillax-spotify-control-squid-glow: rgba(255, 255, 255, 0.4);
+    --chillax-spotify-control-squid-width: 59px;
+    --chillax-spotify-control-squid-height: 20px;
+    --chillax-spotify-control-squid-glow: rgba(255, 255, 15, 0.4);
 
     /* Links */
     --link-color: #e500ff;
@@ -208,7 +212,8 @@ html, body, #app-mount {
 
 /* "Heavenly" text via ::after */
 .leading_c38106::after {
-    content: "H e a v e n l y" !important;
+    content: var(--title-bar-text) !important;
+    display: var(--title-bar-visible) !important;
     font-size: 12px !important;
     font-weight: 900 !important;
     font-family: "Poiret one" !important;
