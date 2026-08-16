@@ -23,7 +23,7 @@
 /* ── Variables ───────────────────────────────────────────────────── */
 :root {
     /* Background */
-    --wallpaper: url("https://imgur.com/ueB9DyW");
+    --wallpaper: url("https://i.imgur.com/ueB9DyW.gif");
     --background-image: var(--wallpaper);
     --bg-opacity: 1;
 
