@@ -36,7 +36,7 @@
     --accentcolorV2: #e500ff;
 
     /* Window */
-    --window-blur: 5px;
+    --window-blur: 0px;
     --window-border-radius: 10px;
     --window-margin: 20px;
 
